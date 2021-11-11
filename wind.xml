@@ -1,0 +1,1555 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl"
+         xmlns="http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2011/9/Ontology1318785573683.owl"/>
+
+<owl:ObjectProperty rdf:about="#anemometer_measures">
+  <rdfs:domain rdf:resource="#Anemometer"/>
+  <rdfs:range rdf:resource="#WindSpeed"/>
+  <rdfs:subPropertyOf rdf:resource="#measures"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has">
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#humidity_sensor_measures">
+  <rdfs:domain rdf:resource="#HumiditySensor"/>
+  <rdfs:range rdf:resource="#Humidity"/>
+  <rdfs:subPropertyOf rdf:resource="#measures"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#measures"/>
+
+<owl:ObjectProperty rdf:about="#met_tower_has">
+  <rdfs:domain rdf:resource="#MeteorologicalTower"/>
+  <rdfs:range rdf:resource="#Sensor"/>
+  <rdfs:subPropertyOf rdf:resource="#has"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#monitor_control_measures">
+  <rdfs:range rdf:resource="#MeasuredPower"/>
+  <rdfs:range rdf:resource="#TurbineStatus"/>
+  <rdfs:subPropertyOf rdf:resource="#measures"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#plant_has">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:range rdf:resource="#MeteorologicalTower"/>
+  <rdfs:range rdf:resource="#WindTurbine"/>
+  <rdfs:subPropertyOf rdf:resource="#has"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#pressure_sensor_measures">
+  <rdfs:domain rdf:resource="#PressureSensor"/>
+  <rdfs:range rdf:resource="#Pressure"/>
+  <rdfs:subPropertyOf rdf:resource="#measures"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#solar_sensor_measures">
+  <rdfs:domain rdf:resource="#SolarRadiationSensor"/>
+  <rdfs:range rdf:resource="#SolarRadiation"/>
+  <rdfs:subPropertyOf rdf:resource="#measures"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#temperature_sensor_measures">
+  <rdfs:domain rdf:resource="#TemperatureSensor"/>
+  <rdfs:range rdf:resource="#Temperature"/>
+  <rdfs:subPropertyOf rdf:resource="#measures"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#turbine_has">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="#Blade"/>
+  <rdfs:range rdf:resource="#Gearbox"/>
+  <rdfs:range rdf:resource="#Generator"/>
+  <rdfs:range rdf:resource="#Hub"/>
+  <rdfs:range rdf:resource="#Nacelle"/>
+  <rdfs:range rdf:resource="#Rotor"/>
+  <rdfs:range rdf:resource="#Tower"/>
+  <rdfs:range rdf:resource="#TurbineStatus"/>
+  <rdfs:subPropertyOf rdf:resource="#has"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#wind_profiler_measures">
+  <rdfs:domain rdf:resource="#WindProfiler"/>
+  <rdfs:range rdf:resource="#WindDirection"/>
+  <rdfs:range rdf:resource="#WindSpeed"/>
+  <rdfs:subPropertyOf rdf:resource="#measures"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#wind_vane_measures">
+  <rdfs:domain rdf:resource="#WindVane"/>
+  <rdfs:range rdf:resource="#WindDirection"/>
+  <rdfs:subPropertyOf rdf:resource="#measures"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#active_power">
+  <rdfs:domain rdf:resource="#WindPower"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{real power}</synonymSet>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#apparent_power">
+  <rdfs:domain rdf:resource="#WindPower"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#capacity">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#capacity_factor">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{utilisation rate}</synonymSet>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#cut-in_wind_speed">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#cut-out_wind_speed">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#date">
+  <rdfs:domain rdf:resource="#FaultData"/>
+  <rdfs:domain rdf:resource="#ForecastPower"/>
+  <rdfs:domain rdf:resource="#HorizontalWindComponent"/>
+  <rdfs:domain rdf:resource="#Humidity"/>
+  <rdfs:domain rdf:resource="#MeasuredPower"/>
+  <rdfs:domain rdf:resource="#Pressure"/>
+  <rdfs:domain rdf:resource="#SolarRadiation"/>
+  <rdfs:domain rdf:resource="#Temperature"/>
+  <rdfs:domain rdf:resource="#TurbineStatus"/>
+  <rdfs:domain rdf:resource="#Turbulence"/>
+  <rdfs:domain rdf:resource="#U-component"/>
+  <rdfs:domain rdf:resource="#V-component"/>
+  <rdfs:domain rdf:resource="#VerticalWindComponent"/>
+  <rdfs:domain rdf:resource="#WindDirection"/>
+  <rdfs:domain rdf:resource="#WindShear"/>
+  <rdfs:domain rdf:resource="#WindSpeed"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#direction">
+  <rdfs:domain rdf:resource="#WindDirection"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#entsoe_code">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#error_rate">
+  <rdfs:domain rdf:resource="#ForecastPower"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#height">
+  <rdfs:domain rdf:resource="#HorizontalWindComponent"/>
+  <rdfs:domain rdf:resource="#Humidity"/>
+  <rdfs:domain rdf:resource="#Pressure"/>
+  <rdfs:domain rdf:resource="#SolarRadiation"/>
+  <rdfs:domain rdf:resource="#Temperature"/>
+  <rdfs:domain rdf:resource="#Turbulence"/>
+  <rdfs:domain rdf:resource="#U-component"/>
+  <rdfs:domain rdf:resource="#V-component"/>
+  <rdfs:domain rdf:resource="#VerticalWindComponent"/>
+  <rdfs:domain rdf:resource="#WindDirection"/>
+  <rdfs:domain rdf:resource="#WindShear"/>
+  <rdfs:domain rdf:resource="#WindSpeed"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hub_height">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#installed_capacity">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{rated capacity, nominal capacity, maximum effect, power capacity, nameplate capacity, wind power capacity}</synonymSet>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#license_date">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#location">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#model_output">
+  <rdfs:domain rdf:resource="#PhysicalModel"/>
+  <rdfs:domain rdf:resource="#StatisticalModel"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#name">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:domain rdf:resource="#WindRelatedModel"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#number_of_blades">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#number_of_turbines">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#owner">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#power_curve">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#rated_power">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#reactive_power">
+  <rdfs:domain rdf:resource="#MeasuredPower"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#rotor_diameter">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#speed">
+  <rdfs:domain rdf:resource="#WindSpeed"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#swept_area">
+  <rdfs:domain rdf:resource="#WindTurbine"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#type">
+  <rdfs:domain rdf:resource="#WindPowerPlant"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#value">
+  <rdfs:domain rdf:resource="#HorizontalWindComponent"/>
+  <rdfs:domain rdf:resource="#Humidity"/>
+  <rdfs:domain rdf:resource="#Pressure"/>
+  <rdfs:domain rdf:resource="#SolarRadiation"/>
+  <rdfs:domain rdf:resource="#Temperature"/>
+  <rdfs:domain rdf:resource="#TurbineStatus"/>
+  <rdfs:domain rdf:resource="#Turbulence"/>
+  <rdfs:domain rdf:resource="#U-component"/>
+  <rdfs:domain rdf:resource="#V-component"/>
+  <rdfs:domain rdf:resource="#VerticalWindComponent"/>
+  <rdfs:domain rdf:resource="#WindDirection"/>
+  <rdfs:domain rdf:resource="#WindShear"/>
+  <rdfs:domain rdf:resource="#WindSpeed"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:AnnotationProperty rdf:about="#country"/>
+
+<owl:AnnotationProperty rdf:about="#labelEN"/>
+
+<owl:AnnotationProperty rdf:about="#labelTR"/>
+
+<owl:AnnotationProperty rdf:about="#membershipValueLabel"/>
+
+<owl:AnnotationProperty rdf:about="#membershipValueLabelTR"/>
+
+<owl:AnnotationProperty rdf:about="#membershipValuesSynonymSet"/>
+
+<owl:AnnotationProperty rdf:about="#membershipValuesSynonymSetTR"/>
+
+<owl:AnnotationProperty rdf:about="#synonymSet"/>
+
+<owl:AnnotationProperty rdf:about="#synonymSetTR"/>
+
+<owl:AnnotationProperty rdf:about="#twitterAccount"/>
+
+<owl:AnnotationProperty rdf:about="#webAddress"/>
+
+<owl:Class rdf:about="#ALADIN">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ALARO">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ALARO</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ALARO</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#ANFIS">
+  <rdfs:subClassOf rdf:resource="#StatisticalModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ANFIS</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ANFIS</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{adaptive neural fuzzy inference system}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#ANN">
+  <rdfs:subClassOf rdf:resource="#StatisticalModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ANN</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ANN</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">YSA</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{artificial neural network}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{yapay sinir ağı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#AR">
+  <rdfs:subClassOf rdf:resource="#StatisticalModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">AR</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">AR</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.1}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Autoregressive}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#ARIMA">
+  <rdfs:subClassOf rdf:resource="#AR"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARIMA</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARIMA</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.1}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Autoregressive Integrated Moving Average}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#ARMA">
+  <rdfs:subClassOf rdf:resource="#AR"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARMA</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARMA</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.1}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Autoregressive Moving Average}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#AROME">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">AROME</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">AROME</labelEN>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Applications of Research to Operations at MesoscalE}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#ARPEGE">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARPEGE</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARPEGE</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Action de Recherche Petite Echelle Grande Echelle}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#ARPS">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARPS</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARPS</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.2</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Advanced Regional Prediction System}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#ARX">
+  <rdfs:subClassOf rdf:resource="#AR"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARX</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARX</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.1}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Autoregressive with Exogenous Input}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#ARXM">
+  <rdfs:subClassOf rdf:resource="#AR"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARXM</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ARXM</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.1}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Autoregressive with Exogenous Input and Multi-timescale Parameter}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#Anemometer">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Anemometer</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">anemometer</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">anemometre</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#Blade">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Blade</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">blade</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">kanat</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.125</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{turbine blade, wind turbine blade}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{türbin kanadı, rüzgar türbini kanadı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#Brake">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Brake</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">brake</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">fren</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#CommercialWeatherForecastCompany">
+  <rdfs:subClassOf rdf:resource="#WindRelatedOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">CommercialWeatherForecastCompany</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">commercial weather forecast company</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#CommercialWindEnergyCompany">
+  <rdfs:subClassOf rdf:resource="#WindRelatedOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">CommercialWindEnergyCompany</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">commercial wind energy company</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#CupAnemometer">
+  <rdfs:subClassOf rdf:resource="#Anemometer"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">CupAnemometer</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">cup anemometer</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#FaultData">
+  <rdfs:subClassOf rdf:resource="#WindRelatedData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">FaultData</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">fault data</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">hata verisi</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{event data}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{olay verisi}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#ForecastPower">
+  <rdfs:subClassOf rdf:resource="#WindPower"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ForecastPower</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">forecast power</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tahmini güç</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.2</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.2</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.2, 0.2, 1.0, 1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.2, 0.2, 1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{power forecast, power prediction, wind power forecast, wind power prediction}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{tahmin edilen güç, güç tahmini, tahmin edilen rüzgar gücü, rüzgar gücü tahmini}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#GFS">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GFS</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GFS</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Global Forecast System}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#Gearbox">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Gearbox</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">gearbox</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#Generator">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Generator</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">generator</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">jeneratör</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#GovernmentalEnergyOrganization">
+  <rdfs:subClassOf rdf:resource="#NationalOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GovernmentalEnergyOrganization</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">governmental energy organization</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#H-axisWindTurbine">
+  <rdfs:subClassOf rdf:resource="#WindTurbine"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">H-axisWindTurbine</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">h-axis wind turbine</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{horizontal axis wind turbine, horizontal-axis wind turbine}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#HARMONIE">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">HARMONIE</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">HARMONIE</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{HiRLAM Aladin Regional Mesoscale Operational NWP In Europe}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#HIRLAM">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">HIRLAM</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">HIRLAM</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{High Resolution Limited Area Model}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#HorizontalWindComponent">
+  <rdfs:subClassOf rdf:resource="#WindData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">HorizontalWindComponent</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">horizontal wind component</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">yatay rüzgar bileşeni</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#Hub">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Hub</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">hub</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#Humidity">
+  <rdfs:subClassOf rdf:resource="#MeteorologicalData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Humidity</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">humidity</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">nem</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#HumiditySensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">HumiditySensor</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">humidity sensor</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">nem sensörü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.5}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{nem algılayıcı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#IFS">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">IFS</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">IFS</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Integrated Forecast System, ECMWF IFS}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#INCA">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">INCA</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">INCA</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Integrated Nowcasting through Comprehensive Analysis}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#InternationalOrganization">
+  <rdfs:subClassOf rdf:resource="#WindRelatedOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">InternationalOrganization</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">international organization</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#InternationalWeatherOrganization">
+  <rdfs:subClassOf rdf:resource="#InternationalOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">InternationalWeatherOrganization</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">international weather organization</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#InternationalWindEnergyAssociation">
+  <rdfs:subClassOf rdf:resource="#InternationalOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">InternationalWindEnergyAssociation</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">international wind energy association</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#LIDARSensor">
+  <rdfs:subClassOf rdf:resource="#WindProfiler"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">LIDARSensor</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">LIDAR sensor</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">LIDAR sensörü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.3}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{LIDAR algılayıcı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#MLP">
+  <rdfs:subClassOf rdf:resource="#StatisticalModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MLP</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MLP</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ÇKA</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.3}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.3}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Multilayer Perceptron}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Çok Katmanlı Algılayıcı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#MM5">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MM5</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MM5</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Fifth-generation Mesoscale Model}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#MOS">
+  <rdfs:subClassOf rdf:resource="#StatisticalModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MOS</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MOS</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.5}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.5}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Model Output Statistics}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Model Çıktı İstatistiği}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#MeasuredPower">
+  <rdfs:subClassOf rdf:resource="#WindPower"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MeasuredPower</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">measured power</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ölçülen güç</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.2</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.2</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{measured wind power, wind power measurement}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{ölçülen rüzgar gücü, rüzgar gücü ölçümü}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#MeteorologicalData">
+  <rdfs:subClassOf rdf:resource="#WindRelatedData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MeteorologicalData</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">meteorological data</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">meteorolojik veri</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#MeteorologicalTower">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MeteorologicalTower</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">meteorological tower</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">meteorolojik ölçüm direği</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0, 0.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{met tower, wind mast, mast}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#MinistryOfEnergy">
+  <rdfs:subClassOf rdf:resource="#GovernmentalEnergyOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MinistryOfEnergy</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Ministry of Energy</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Enerji Bakanlığı</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#NAM">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NAM</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NAM</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{North American Mesoscale Model}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#Nacelle">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Nacelle</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">nacelle</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#NationalOrganization">
+  <rdfs:subClassOf rdf:resource="#WindRelatedOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NationalOrganization</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">national organization</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#NationalWeatherService">
+  <rdfs:subClassOf rdf:resource="#GovernmentalEnergyOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NationalWeatherService</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">national weather service</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ulusal hava durumu servisi</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#NationalWindEnergyAssociation">
+  <rdfs:subClassOf rdf:resource="#NationalOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NationalWindEnergyAssociation</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">National Wind Energy Association</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#NationalWindResearchOrganization">
+  <rdfs:subClassOf rdf:resource="#NationalOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NationalWindResearchOrganization</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">National Wind Research Organization</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#NumericalWeatherPrediction">
+  <rdfs:subClassOf rdf:resource="#WindRelatedModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NumericalWeatherPrediction</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">numerical weather prediction</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sayısal hava tahmini</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{NWP}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{SHT}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#OffshoreWindPowerPlant">
+  <rdfs:subClassOf rdf:resource="#WindPowerPlant"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">OffshoreWindPowerPlant</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">offshore wind power plant</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">açık deniz rüzgar santrali</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{offshore wind farm}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{açık deniz rüzgar çiftliği, açık deniz rüzgar enerji santrali}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#OnshoreWindPowerPlant">
+  <rdfs:subClassOf rdf:resource="#WindPowerPlant"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">OnshoreWindPowerPlant</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">onshore wind power plant</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">karasal rüzgar santrali</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{onshore wind farm}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{karasal rüzgar çiftliği, karasal rüzgar enerji santrali}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#PSO">
+  <rdfs:subClassOf rdf:resource="#StatisticalModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PSO</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PSO</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.3}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.3}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Particle Swarm Optimization}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Parçacık Sürü Optimizasyonu}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#PhysicalModel">
+  <rdfs:subClassOf rdf:resource="#WindPowerForecastModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PhysicalModel</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">physical model</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">fiziksel model</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#Pressure">
+  <rdfs:subClassOf rdf:resource="#MeteorologicalData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Pressure</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">pressure</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">basınç</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#PressureSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PressureSensor</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">pressure sensor</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">basınç sensörü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.5}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{basınç algılayıcı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#PropellerAnemometer">
+  <rdfs:subClassOf rdf:resource="#Anemometer"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PropellerAnemometer</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">propeller anemometer</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#RADARSensor">
+  <rdfs:subClassOf rdf:resource="#WindProfiler"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">RADARSensor</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">RADAR sensor</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">RADAR sensörü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.3}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{RADAR algılayıcı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#Rotor">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Rotor</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">rotor</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.2</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#SARIMA">
+  <rdfs:subClassOf rdf:resource="#AR"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SARIMA</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SARIMA</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.1}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Seasonal Auto-Regression Integrated Moving Average}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#SODARSensor">
+  <rdfs:subClassOf rdf:resource="#WindProfiler"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SODARSensor</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SODAR sensor</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SODAR sensörü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.3}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{SODAR algılayıcı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#SVM">
+  <rdfs:subClassOf rdf:resource="#StatisticalModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SVM</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SVM</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DVM</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.1}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.1}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{support vector machine}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{destek vektör makinesi}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#Sensor">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Sensor</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sensor</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">algılayıcı</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.3</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.3}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{sensör}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#SolarRadiation">
+  <rdfs:subClassOf rdf:resource="#MeteorologicalData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SolarRadiation</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">solar radiation</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">güneş ışınımı</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#SolarRadiationSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SolarRadiationSensor</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">solar radiation sensor</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">güneş ışınımı sensörü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.5}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{güneş ışınımı algılayıcı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#SonicAnemometer">
+  <rdfs:subClassOf rdf:resource="#Anemometer"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SonicAnemometer</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sonic anemometer</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#StatisticalModel">
+  <rdfs:subClassOf rdf:resource="#WindPowerForecastModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">StatisticalModel</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">statistical model</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">istatistiksel model</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#Temperature">
+  <rdfs:subClassOf rdf:resource="#MeteorologicalData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Temperature</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">temperature</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sıcaklık</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#TemperatureSensor">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TemperatureSensor</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">temperature sensor</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">sıcaklık sensörü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.5</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.5}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{sıcaklık algılayıcı}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#Tower">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Tower</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tower</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">kule</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#TransmissionSystemOperator">
+  <rdfs:subClassOf rdf:resource="#GovernmentalEnergyOrganization"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TransmissionSystemOperator</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">transmission system operator</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">iletim sistemi operatörü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#TurbineStatus">
+  <rdfs:subClassOf rdf:resource="#WindRelatedData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TurbineStatus</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">turbine status</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">türbin durumu</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#Turbulence">
+  <rdfs:subClassOf rdf:resource="#WindData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Turbulence</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">turbulence</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">türbülans</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#U-component">
+  <rdfs:subClassOf rdf:resource="#HorizontalWindComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">U-Component</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">u-component</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">u bileşeni</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.0, 1.0, 1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.0, 1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{u component, wind u-component, wind u component}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{u bileşeni, rüzgarın u-bileşeni, rüzgarın u bileşeni}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#V-axisWindTurbine">
+  <rdfs:subClassOf rdf:resource="#WindTurbine"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">V-axisWindTurbine</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">v-axis wind turbine</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{vertical-axis wind turbine, vertical axis wind turbine}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#V-component">
+  <rdfs:subClassOf rdf:resource="#HorizontalWindComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">V-Component</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">v-component</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">v-bileşeni</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.0, 1.0, 1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.0, 1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{v component, wind v-component, wind v component}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{v bileşeni, rüzgarın v-bileşeni, rüzgarın v bileşeni}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#VerticalWindComponent">
+  <rdfs:subClassOf rdf:resource="#WindData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">VerticalWindComponent</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vertical wind component</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">düşey rüzgar bileşeni</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#WRF">
+  <rdfs:subClassOf rdf:resource="#NumericalWeatherPrediction"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WRF</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WRF</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Weather Research and Forecasting}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#WindData">
+  <rdfs:subClassOf rdf:resource="#MeteorologicalData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindData</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind data</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">rüzgar verisi</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{wind}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{rüzgar}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#WindDirection">
+  <rdfs:subClassOf rdf:resource="#WindData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindDirection</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind direction</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">rüzgar yönü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#WindPower">
+  <rdfs:subClassOf rdf:resource="#WindRelatedData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindPower</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind power</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">rüzgar gücü</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 0.2, 0.2, 1.0, 1.0, 1.0, 1.0, 0.2, 0.3, 0.3}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.3, 0.3}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{wind power generation, energy, generation, wind energy, wind generation, wind generated power, wind-generated power, electricity production, renewable energy, sustainable energy}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{rüzgar enerjisi, rüzgar enerjisi üretimi, rüzgar gücü üretimi, rüzgardan üretilen güç, rüzgardan üretilen enerji, rüzgardan üretim, rüzgar üretimi, yenilenebilir enerji, sürdürülebilir enerji}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#WindPowerForecastModel">
+  <rdfs:subClassOf rdf:resource="#WindRelatedModel"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindPowerForecastModel</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind power forecast model</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">rüzgar gücü tahmin modeli</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#WindPowerPlant">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindPowerPlant</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind power plant</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">rüzgar enerji santrali</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0, 1.0, 1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0, 1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{WPP, wind plant, wind energy plant, wind farm}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{RES, rüzgar santrali, rüzgar gücü santrali, rüzgar çiftliği}</synonymSetTR>
+</owl:Class>
+
+<owl:Class rdf:about="#WindProfiler">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindProfiler</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind profiler</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#WindRelatedData">
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindRelatedData</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind related data</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#WindRelatedModel">
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindRelatedModel</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind related model</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+</owl:Class>
+
+<owl:Class rdf:about="#WindRelatedOrganization">
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindRelatedOrganization</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind related organization</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#WindRelatedStructuralComponent">
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindRelatedStructuralComponent</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind related structural component</labelEN>
+</owl:Class>
+
+<owl:Class rdf:about="#WindShear">
+  <rdfs:subClassOf rdf:resource="#WindData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindShear</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind shear</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{windshear, wind gradient}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#WindSpeed">
+  <rdfs:subClassOf rdf:resource="#WindData"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindSpeed</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind speed</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">rüzgar hızı</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+</owl:Class>
+
+<owl:Class rdf:about="#WindTurbine">
+  <rdfs:subClassOf rdf:resource="#WindRelatedStructuralComponent"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindTurbine</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind turbine</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">rüzgar türbini</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.5, 1.0, 1.0, 0.5}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{turbine, wind turbine generator, WTG, generator}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#WindVane">
+  <rdfs:subClassOf rdf:resource="#Sensor"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WindVane</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">wind wane</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{weather vane, weather cock}</synonymSet>
+</owl:Class>
+
+<owl:Class rdf:about="#target_class">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<NationalWindResearchOrganization rdf:about="#CENER">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">CENER</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">es</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">CENER</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Centro Nacional de Energías Renovables, National Renewable Energy Center of Spain}</synonymSet>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/cener_energia</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.cener.com/</webAddress>
+</NationalWindResearchOrganization>
+
+<NationalWeatherService rdf:about="#DWD">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DWD</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">de</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DWD</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Deutscher Wetterdienst, German Meteorological Office}</synonymSet>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/dwd_presse</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.dwd.de</webAddress>
+</NationalWeatherService>
+
+<InternationalWeatherOrganization rdf:about="#ECMWF">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ECMWF</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ECMWF</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{European Centre for Medium-Range Weather Forecasts}</synonymSet>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/ecmwf</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://www.ecmwf.int/</webAddress>
+</InternationalWeatherOrganization>
+
+<GovernmentalEnergyOrganization rdf:about="#EPDK">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EPDK</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EMRA</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EPDK</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Energy Market Regulatory Authority}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Enerji Piyasası Düzenleme Kurumu}</synonymSetTR>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.epdk.org.tr</webAddress>
+</GovernmentalEnergyOrganization>
+
+<NationalOrganization rdf:about="#EPIAS">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EPIAS</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EPIAS</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EPİAŞ</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Enerji Piyasaları İşletme Anonim Şirketi}</synonymSetTR>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://www.epias.com.tr/</webAddress>
+</NationalOrganization>
+
+<NationalWindResearchOrganization rdf:about="#EPRI">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EPRI</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">us</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EPRI</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EPRI</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Electric Power Research Institute}</synonymSet>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://www.epri.com</webAddress>
+</NationalWindResearchOrganization>
+
+<GovernmentalEnergyOrganization rdf:about="#EUAS">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EUAS</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EUAS</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EÜAŞ</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Elektrik Üretim Anonim Şirketi}</synonymSetTR>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.euas.gov.tr/</webAddress>
+</GovernmentalEnergyOrganization>
+
+<InternationalWindEnergyAssociation rdf:about="#EWEA">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EWEA</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">EWEA</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{European Wind Energy Association, WindEurope}</synonymSet>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/WindEurope</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://windeurope.org/</webAddress>
+</InternationalWindEnergyAssociation>
+
+<InternationalOrganization rdf:about="#IRENA">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">IRENA</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">IRENA</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{International Renewable Energy Agency}</synonymSet>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/IRENA</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.irena.org</webAddress>
+</InternationalOrganization>
+
+<NationalWeatherService rdf:about="#JMA">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">JMA</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">jp</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">JMA</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">JMA</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Japan Meteorological Agency}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Japon Meteoroloji Ajansı}</synonymSetTR>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.jma.go.jp</webAddress>
+</NationalWeatherService>
+
+<NationalWeatherService rdf:about="#MGM">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MGM</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TSMS</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MGM</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Turkish State Meteorological Service}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Meteoroloji Genel Müdürlüğü}</synonymSetTR>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/meteoroloji_twi</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://www.mgm.gov.tr</webAddress>
+</NationalWeatherService>
+
+<NationalWindResearchOrganization rdf:about="#NCAR">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NCAR</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">us</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NCAR</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{National Center for Atmospheric Research}</synonymSet>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://ncar.ucar.edu/</webAddress>
+</NationalWindResearchOrganization>
+
+<GovernmentalEnergyOrganization rdf:about="#NCEP">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NCEP</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">us</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NCEP</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NCEP</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{National Centers for Environmental Prediction}</synonymSet>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.ncep.noaa.gov/</webAddress>
+</GovernmentalEnergyOrganization>
+
+<InternationalOrganization rdf:about="#NERC">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NERC</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NERC</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NERC</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.1</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{0.1}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{North American Electric Reliability Corporation}</synonymSet>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.nerc.com</webAddress>
+</InternationalOrganization>
+
+<NationalWeatherService rdf:about="#NHC">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NHC</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">us</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NHC</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{National Hurricane Center}</synonymSet>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/NHC_Atlantic</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.nhc.noaa.gov/</webAddress>
+</NationalWeatherService>
+
+<GovernmentalEnergyOrganization rdf:about="#NOAA">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NOAA</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">us</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NOAA</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{National Oceanic and Atmospheric Administration}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Ulusal Okyanus ve Atmosfer Dairesi}</synonymSetTR>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/NOAA</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.noaa.gov/</webAddress>
+</GovernmentalEnergyOrganization>
+
+<NationalWeatherService rdf:about="#NWS">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NWS</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">us</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">NWS</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{National Weather Service}</synonymSet>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/NWS</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://www.weather.gov/</webAddress>
+</NationalWeatherService>
+
+<MinistryOfEnergy rdf:about="#TCEnerjiBakanligi">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TCEnerjiBakanligi</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Ministry of Energy and Natural Resources</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">T.C. Enerji ve Tabii Kaynaklar Bakanlığı</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Enerji Bakanlığı, Enerji ve Tabii Kaynaklar Bakanlığı, Türkiye Cumhuriyeti Enerji ve Tabii Kaynaklar Bakanlığı}</synonymSetTR>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/tcenerji</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.enerji.gov.tr</webAddress>
+</MinistryOfEnergy>
+
+<GovernmentalEnergyOrganization rdf:about="#TEDAS">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TEDAS</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TEDAS</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TEDAŞ</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Türkiye Elektrik Dağıtım Anonim Şirketi}</synonymSetTR>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.tedas.gov.tr/</webAddress>
+</GovernmentalEnergyOrganization>
+
+<TransmissionSystemOperator rdf:about="#TEIAS">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TEIAS</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TEIAS</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TEİAŞ</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Türkiye Elektrik İletim Anonim Şirketi}</synonymSetTR>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://www.teias.gov.tr</webAddress>
+</TransmissionSystemOperator>
+
+<GovernmentalEnergyOrganization rdf:about="#TETAS">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TETAS</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TETAS</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TETAŞ</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Türkiye Elektrik Ticaret ve Taahhüt Anonim Şirketi}</synonymSetTR>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.tetas.gov.tr</webAddress>
+</GovernmentalEnergyOrganization>
+
+<NationalWindEnergyAssociation rdf:about="#TUREB">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TÜREB</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TWEA</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TÜREB</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Turkish Wind Energy Association}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Türkiye Rüzgar Enerjisi Birliği}</synonymSetTR>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/tureb_twea</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.tureb.com.tr/</webAddress>
+</NationalWindEnergyAssociation>
+
+<MinistryOfEnergy rdf:about="#USDoE">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">USDoE</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">us</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">U.S. Department of Energy</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ABD Enerji Bakanlığı</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0, 1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{DoE, US DoE, Department of Energy}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{A.B.D. Enerji Bakanlığı}</synonymSetTR>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/ENERGY</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://energy.gov/</webAddress>
+</MinistryOfEnergy>
+
+<InternationalWeatherOrganization rdf:about="#WMO">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WMO</rdfs:label>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">WMO</labelEN>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabel>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0, 1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{World Meteorological Organization}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Dünya Meteoroloji Örgütü, Dünya Meteoroloji Teşkilatı}</synonymSetTR>
+  <twitterAccount rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://twitter.com/wmo</twitterAccount>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://www.wmo.int/</webAddress>
+</InternationalWeatherOrganization>
+
+<GovernmentalEnergyOrganization rdf:about="#YEGM">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">YEGM</rdfs:label>
+  <country rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">tr</country>
+  <labelEN rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">GDRE</labelEN>
+  <labelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">YEGM</labelTR>
+  <membershipValueLabel rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">0.0</membershipValueLabel>
+  <membershipValueLabelTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">1.0</membershipValueLabelTR>
+  <membershipValuesSynonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSet>
+  <membershipValuesSynonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{1.0}</membershipValuesSynonymSetTR>
+  <synonymSet rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{General Directorate of Renewable Energy}</synonymSet>
+  <synonymSetTR rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">{Yenilenebilir Enerji Genel Müdürlüğü}</synonymSetTR>
+  <webAddress rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.yegm.gov.tr/</webAddress>
+</GovernmentalEnergyOrganization>
+
+<target_class rdf:about="#233.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#358.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#319.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#290.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#270.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#24.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#54.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#322.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#312.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#800.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#900.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#1.2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#1.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#-3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#101.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#664.0">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+<target_class rdf:about="#2.78">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</target_class>
+
+
+</rdf:RDF>
