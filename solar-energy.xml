@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns1="http://scigraph.springernature.com/ontologies/core/"
+   xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://scigraph.springernature.com/ontologies/subjects/solar-energy">
+    <ns2:narrower rdf:resource="http://scigraph.springernature.com/ontologies/subjects/solar-fuels"/>
+    <ns1:license rdf:resource="http://scigraph.springernature.com/explorer/license/"/>
+    <ns2:broader rdf:resource="http://scigraph.springernature.com/ontologies/subjects/renewable-energy"/>
+    <ns1:sdDataset>onto_subjects</ns1:sdDataset>
+    <ns2:narrower rdf:resource="http://scigraph.springernature.com/ontologies/subjects/solar-thermal-energy"/>
+    <ns2:narrower rdf:resource="http://scigraph.springernature.com/ontologies/subjects/photovoltaics"/>
+    <ns2:narrower rdf:resource="http://scigraph.springernature.com/ontologies/subjects/thermophotovoltaics"/>
+    <ns2:prefLabel xml:lang="en">Solar energy</ns2:prefLabel>
+    <rdf:type rdf:resource="http://ns.nature.com/terms/Subject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:narrower rdf:resource="http://scigraph.springernature.com/ontologies/subjects/artificial-photosynthesis"/>
+    <ns2:inScheme rdf:resource="http://scigraph.springernature.com/ontologies/subjects/"/>
+    <rdfs:label>Solar energy</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>
